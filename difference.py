@@ -15,7 +15,22 @@ def twos_complement(n1, n):
 
 def subtract(s1, s2, n):
     result = add(s1, twos_complement(s2, n), n)
-    if len(result) > n:
+    if(len(result) > n):
         return result[1:]
-    else:
-        return "-"+twos_complement(result, n)
+    return result
+
+
+def main():
+    n = int(input("Enter the number of bits: "))
+
+    n1 = input("Enter the first number: ")
+    n2 = input("Enter the second number: ")
+
+    n1 = n1.zfill(n-len(n1)+1)
+    n2 = n2.zfill(n-len(n2)+1)
+
+    print(subtract(n1, n2, n))
+
+
+if (__name__ == "__main__"):
+    main()

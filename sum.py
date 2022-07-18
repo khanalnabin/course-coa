@@ -27,3 +27,19 @@ def add(s1, s2, n):
         result = '1' + result
 
     return result
+
+
+def main():
+    n = int(input("Enter the number of bits: "))
+
+    n1 = input("Enter the first number: ")
+    n2 = input("Enter the second number: ")
+
+    n1 = n1.zfill(n)
+    n2 = n2.zfill(n)
+
+    print(add(n1, n2, n))
+
+
+if (__name__ == "__main__"):
+    main()
