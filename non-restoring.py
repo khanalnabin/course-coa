@@ -28,6 +28,11 @@ def divide(dividend, divisor, n):
         else:
             Q = Q[:len(Q)-1]+'1'
             should_add = False
+    if(should_add):
+        A = add(A, M, n)
+        if(len(A) > n):
+            A = A[1:]
+
     return Q, A
 
 
