@@ -88,12 +88,27 @@ def page_replacement_lfu(data, no_of_frames):
 
 
 def main():
-    # no_of_frames = int(input("Enter the number of frames: "))
-    # data = input("Enter the data: ").split(' ')
     no_of_frames = 3
     data = ['2', '3', '2', '1', '5', '2', '4', '5', '3', '2', '5', '2']
-    all_frames, no_of_hits = page_replacement_lfu(data, no_of_frames)
+
     print(data)
+    print()
+    print("FIFO")
+    all_frames, no_of_hits = page_replacement_fifo(data, no_of_frames)
+    for i in all_frames:
+        print(i)
+    print("No of hits: ", no_of_hits)
+    print("Hit ratio: ", no_of_hits/len(data))
+    print()
+    print("LRU")
+    all_frames, no_of_hits = page_replacement_lru(data, no_of_frames)
+    for i in all_frames:
+        print(i)
+    print("No of hits: ", no_of_hits)
+    print("Hit ratio: ", no_of_hits/len(data))
+    print()
+    print("LFU")
+    all_frames, no_of_hits = page_replacement_lfu(data, no_of_frames)
     for i in all_frames:
         print(i)
     print("No of hits: ", no_of_hits)
